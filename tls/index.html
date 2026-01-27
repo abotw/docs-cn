@@ -1,0 +1,1711 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="http://abotw.github.io/docs-cn/tls/">
+      
+      
+        <link rel="prev" href="../pppoe/">
+      
+      
+        <link rel="next" href="../tun/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>TLS - Network Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tls" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Network Docs" class="md-header__button md-logo" aria-label="Network Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Network Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TLS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/abotw/docs-cn" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Network Docs" class="md-nav__button md-logo" aria-label="Network Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Network Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/abotw/docs-cn" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v2h1a1 1 0 0 1 1 1h7v2h-7a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1H2v-2h7a1 1 0 0 1 1-1h1v-2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Docs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bypass-router/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bypass Router
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ddns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DDNS
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--done"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pppoe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PPPoE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TLS
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--done"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TLS
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--done"></span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-why-tls-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Why TLS Exists
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-what-is-tls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. What Is TLS?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-what-problems-tls-solves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. What Problems TLS Solves
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. What Problems TLS Solves">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-eavesdropping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Eavesdropping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-man-in-the-middle-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Man-in-the-Middle Attacks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-data-tampering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Data Tampering
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-tls-in-one-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. TLS in One Picture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-the-tls-handshake-step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        *5. The TLS Handshake (Step by Step)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="*5. The TLS Handshake (Step by Step)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-clienthello" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: ClientHello
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-serverhello" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: ServerHello
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-certificate-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Certificate Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-key-exchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Key Exchange
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-secure-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Secure Communication
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-certificates-explained-simply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Certificates Explained Simply
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Certificates Explained Simply">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#certificate-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Certificate Chain
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-symmetric-vs-asymmetric-encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Symmetric vs Asymmetric Encryption
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Symmetric vs Asymmetric Encryption">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#asymmetric-encryption-slow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Asymmetric Encryption (Slow)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symmetric-encryption-fast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Symmetric Encryption (Fast)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-common-tls-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Common TLS Versions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-https-http-tls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. HTTPS = HTTP + TLS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-tls-in-practice-cli-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        *10. TLS in Practice (CLI Examples)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="*10. TLS in Practice (CLI Examples)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-a-tls-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check a TLS connection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#see-certificate-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See certificate details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-supported-tls-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test supported TLS versions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-common-beginner-confusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Common Beginner Confusions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Common Beginner Confusions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tls-encrypts-everything-on-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        “TLS encrypts everything on the server”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tls-makes-a-website-trustworthy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        “TLS makes a website trustworthy”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssl-and-tls-are-the-same" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        “SSL and TLS are the same”
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-where-youll-see-tls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Where You’ll See TLS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-mental-model-to-remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Mental Model to Remember
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-what-to-learn-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. What to Learn Next
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tun/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TUN Mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wifi
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Wifi
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wifi/wifi-01/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12 21 3.6-4.8c-1-.75-2.25-1.2-3.6-1.2s-2.6.45-3.6 1.2zm0-18C7.95 3 4.21 4.34 1.2 6.6L3 9c2.5-1.88 5.62-3 9-3s6.5 1.12 9 3l1.8-2.4C19.79 4.34 16.05 3 12 3m0 6c-2.7 0-5.19.89-7.2 2.4l1.8 2.4C8.1 12.67 9.97 12 12 12s3.9.67 5.4 1.8l1.8-2.4C17.19 9.89 14.7 9 12 9"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Wi-Fi
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--done"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-why-tls-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Why TLS Exists
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-what-is-tls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. What Is TLS?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-what-problems-tls-solves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. What Problems TLS Solves
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. What Problems TLS Solves">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-eavesdropping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Eavesdropping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-man-in-the-middle-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Man-in-the-Middle Attacks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-data-tampering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Data Tampering
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-tls-in-one-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. TLS in One Picture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-the-tls-handshake-step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        *5. The TLS Handshake (Step by Step)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="*5. The TLS Handshake (Step by Step)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-clienthello" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: ClientHello
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-serverhello" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: ServerHello
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-certificate-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Certificate Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-key-exchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Key Exchange
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-secure-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Secure Communication
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-certificates-explained-simply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Certificates Explained Simply
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Certificates Explained Simply">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#certificate-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Certificate Chain
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-symmetric-vs-asymmetric-encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Symmetric vs Asymmetric Encryption
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Symmetric vs Asymmetric Encryption">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#asymmetric-encryption-slow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Asymmetric Encryption (Slow)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symmetric-encryption-fast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Symmetric Encryption (Fast)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-common-tls-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Common TLS Versions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-https-http-tls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. HTTPS = HTTP + TLS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-tls-in-practice-cli-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        *10. TLS in Practice (CLI Examples)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="*10. TLS in Practice (CLI Examples)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-a-tls-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check a TLS connection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#see-certificate-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See certificate details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-supported-tls-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test supported TLS versions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-common-beginner-confusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Common Beginner Confusions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Common Beginner Confusions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tls-encrypts-everything-on-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        “TLS encrypts everything on the server”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tls-makes-a-website-trustworthy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        “TLS makes a website trustworthy”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssl-and-tls-are-the-same" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        “SSL and TLS are the same”
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-where-youll-see-tls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Where You’ll See TLS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-mental-model-to-remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Mental Model to Remember
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-what-to-learn-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. What to Learn Next
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="tls">TLS</h1>
+<h2 id="1-why-tls-exists">1. Why TLS Exists</h2>
+<p>Imagine sending a postcard through the mail ✉️
+Anyone along the way can:</p>
+<ul>
+<li>Read it</li>
+<li>Copy it</li>
+<li>Modify it</li>
+</ul>
+<p>Early Internet traffic worked like that.</p>
+<p><strong>TLS fixes this problem</strong> by providing:</p>
+<ol>
+<li>🔒 <strong>Encryption</strong> – others can’t read the data</li>
+<li>🧾 <strong>Authentication</strong> – you know who you’re talking to</li>
+<li>🛡 <strong>Integrity</strong> – data can’t be secretly modified</li>
+</ol>
+<p>Today, TLS protects:</p>
+<ul>
+<li>HTTPS (websites)</li>
+<li>Email (SMTP, IMAP)</li>
+<li>APIs</li>
+<li>VPNs</li>
+<li>Many CLI tools and cloud services</li>
+</ul>
+<p>If you see <code>https://</code>, TLS is involved.</p>
+<h2 id="2-what-is-tls">2. What Is TLS?</h2>
+<p><strong>TLS (Transport Layer Security)</strong> is a cryptographic protocol that secures communication between two parties, usually:</p>
+<ul>
+<li><strong>Client</strong> (browser, app, CLI tool)</li>
+<li><strong>Server</strong> (website, API, service)</li>
+</ul>
+<p>TLS operates <strong>between the application layer and the transport layer</strong>.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Application (HTTP, SMTP, IMAP)
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>------------------------------
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>TLS
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>------------------------------
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>TCP
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>------------------------------
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>IP
+</span></code></pre></div>
+<p><strong>TLS is the modern replacement for SSL (SSL is obsolete).</strong></p>
+<h2 id="3-what-problems-tls-solves">3. What Problems TLS Solves</h2>
+<h3 id="31-eavesdropping">3.1 Eavesdropping</h3>
+<p>Without TLS:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>password=123456
+</span></code></pre></div>
+<p>With TLS:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>9f a3 7b 2c 81 ...
+</span></code></pre></div>
+<h3 id="32-man-in-the-middle-attacks">3.2 Man-in-the-Middle Attacks</h3>
+<p>TLS ensures:</p>
+<ul>
+<li>You are really talking to <strong>google.com</strong></li>
+<li>Not an attacker pretending to be it</li>
+</ul>
+<h3 id="33-data-tampering">3.3 Data Tampering</h3>
+<p>TLS detects if data was modified in transit.</p>
+<h2 id="4-tls-in-one-picture">4. TLS in One Picture</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Client                    Server
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  | ------ ClientHello ---&gt; |
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  | &lt;----- ServerHello ---- |
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  | &lt;--- Certificate ------ |
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  | ---- Key Exchange ----&gt; |
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  | === Encrypted Data ===  |
+</span></code></pre></div>
+<p>This initial process is called the <strong>TLS Handshake</strong>.</p>
+<h2 id="5-the-tls-handshake-step-by-step">*5. The TLS Handshake (Step by Step)</h2>
+<p>Let’s simplify what really happens.</p>
+<h3 id="step-1-clienthello">Step 1: ClientHello</h3>
+<p>The client says:</p>
+<ul>
+<li>TLS versions it supports</li>
+<li>Encryption algorithms it supports</li>
+<li>A random number</li>
+</ul>
+<h3 id="step-2-serverhello">Step 2: ServerHello</h3>
+<p>The server replies:</p>
+<ul>
+<li>Chosen TLS version</li>
+<li>Chosen encryption algorithm</li>
+<li>Its own random number</li>
+<li><strong>Certificate</strong></li>
+</ul>
+<h3 id="step-3-certificate-verification">Step 3: Certificate Verification</h3>
+<p>The client:</p>
+<ul>
+<li>Checks the server certificate</li>
+<li>Verifies it was signed by a trusted <strong>Certificate Authority (CA)</strong></li>
+</ul>
+<p>If this fails → connection aborted ❌</p>
+<h3 id="step-4-key-exchange">Step 4: Key Exchange</h3>
+<p>Both sides:</p>
+<ul>
+<li>Agree on a <strong>shared secret</strong></li>
+<li>No one else can compute it</li>
+</ul>
+<p>(Modern TLS uses <strong>ECDHE</strong> for this.)</p>
+<h3 id="step-5-secure-communication">Step 5: Secure Communication</h3>
+<p>All further data is:</p>
+<ul>
+<li>Encrypted</li>
+<li>Authenticated</li>
+<li>Integrity-protected</li>
+</ul>
+<h2 id="6-certificates-explained-simply">6. Certificates Explained Simply</h2>
+<p>A <strong>TLS certificate</strong> binds:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Public Key ↔ Domain Name
+</span></code></pre></div>
+<p>Issued by a <strong>Certificate Authority (CA)</strong> like:</p>
+<ul>
+<li><strong>Let’s Encrypt</strong></li>
+<li>DigiCert</li>
+<li>GlobalSign</li>
+</ul>
+<p>Your OS/browser trusts a list of CAs.</p>
+<h3 id="certificate-chain">Certificate Chain</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Your Site
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>  ↓
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Intermediate CA
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>  ↓
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Root CA (trusted by OS)
+</span></code></pre></div>
+<h2 id="7-symmetric-vs-asymmetric-encryption">7. Symmetric vs Asymmetric Encryption</h2>
+<p>TLS uses <strong>both</strong>.</p>
+<h3 id="asymmetric-encryption-slow">Asymmetric Encryption (Slow)</h3>
+<ul>
+<li>Public key / private key</li>
+<li>Used for:<ul>
+<li>Authentication</li>
+<li>Key exchange</li>
+</ul>
+</li>
+</ul>
+<h3 id="symmetric-encryption-fast">Symmetric Encryption (Fast)</h3>
+<ul>
+<li>One shared secret key</li>
+<li>Used for:<ul>
+<li>Actual data transfer</li>
+</ul>
+</li>
+</ul>
+<p>TLS combines them:</p>
+<blockquote>
+<p>Asymmetric to agree on a key, symmetric to send data.</p>
+</blockquote>
+<h2 id="8-common-tls-versions">8. Common TLS Versions</h2>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SSL 2.0</td>
+<td>❌ Broken</td>
+</tr>
+<tr>
+<td>SSL 3.0</td>
+<td>❌ Broken</td>
+</tr>
+<tr>
+<td>TLS 1.0</td>
+<td>❌ Deprecated</td>
+</tr>
+<tr>
+<td>TLS 1.1</td>
+<td>❌ Deprecated</td>
+</tr>
+<tr>
+<td>TLS 1.2</td>
+<td>✅ Widely used</td>
+</tr>
+<tr>
+<td>TLS 1.3</td>
+<td>✅ Modern &amp; faster</td>
+</tr>
+</tbody>
+</table>
+<p><strong>TLS 1.3</strong> improves:</p>
+<ul>
+<li>Faster handshake</li>
+<li>Better security defaults</li>
+<li>Fewer insecure options</li>
+</ul>
+<h2 id="9-https-http-tls">9. HTTPS = HTTP + TLS</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>HTTP   → Plain text
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>HTTPS  → HTTP over TLS
+</span></code></pre></div>
+<p>What HTTPS gives you:</p>
+<ul>
+<li>🔒 Encrypted traffic</li>
+<li>🧾 Verified website identity</li>
+<li>🛡 Protection against tampering</li>
+</ul>
+<p>What it does <strong>not</strong> give you:</p>
+<ul>
+<li>A “safe” website</li>
+<li>Protection from malware</li>
+<li>Anonymity</li>
+</ul>
+<h2 id="10-tls-in-practice-cli-examples">*10. TLS in Practice (CLI Examples)</h2>
+<h3 id="check-a-tls-connection">Check a TLS connection</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>openssl<span class="w"> </span>s_client<span class="w"> </span>-connect<span class="w"> </span>google.com:443
+</span></code></pre></div>
+<h3 id="see-certificate-details">See certificate details</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>openssl<span class="w"> </span>x509<span class="w"> </span>-in<span class="w"> </span>cert.pem<span class="w"> </span>-text<span class="w"> </span>-noout
+</span></code></pre></div>
+<h3 id="test-supported-tls-versions">Test supported TLS versions</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>curl<span class="w"> </span>-v<span class="w"> </span>https://example.com
+</span></code></pre></div>
+<h2 id="11-common-beginner-confusions">11. Common Beginner Confusions</h2>
+<h3 id="tls-encrypts-everything-on-the-server">“TLS encrypts everything on the server”</h3>
+<p>❌ No</p>
+<p>TLS only protects <strong>data in transit</strong>, not at rest.</p>
+<h3 id="tls-makes-a-website-trustworthy">“TLS makes a website trustworthy”</h3>
+<p>❌ No</p>
+<p>It only proves domain ownership, not intent.</p>
+<h3 id="ssl-and-tls-are-the-same">“SSL and TLS are the same”</h3>
+<p>❌ SSL is obsolete; TLS is the correct term.</p>
+<h2 id="12-where-youll-see-tls">12. Where You’ll See TLS</h2>
+<ul>
+<li>Browsers (HTTPS)</li>
+<li>Git over HTTPS</li>
+<li>Docker registries</li>
+<li>Email servers</li>
+<li>APIs</li>
+<li>Cloud services</li>
+<li><strong>Tailscale</strong>, VPNs, proxies</li>
+</ul>
+<p>If security matters, TLS is there.</p>
+<h2 id="13-mental-model-to-remember">13. Mental Model to Remember</h2>
+<p>Think of TLS as:</p>
+<blockquote>
+<p><strong>A locked, tamper-proof, identity-verified tunnel</strong>
+  between your computer and a server.</p>
+</blockquote>
+<h2 id="14-what-to-learn-next">14. What to Learn Next</h2>
+<p>If you want to go deeper:</p>
+<ul>
+<li>How certificates are issued (ACME / <strong>Let’s Encrypt</strong>)</li>
+<li>TLS 1.3 handshake in detail</li>
+<li>Cipher suites</li>
+<li>Mutual TLS (mTLS)</li>
+<li>TLS in Nginx / Caddy</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1697 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="http://abotw.github.io/docs-cn/pppoe/">
+      
+      
+        <link rel="prev" href="../ports/">
+      
+      
+        <link rel="next" href="../tls/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>PPPoE - Network Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pppoe" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Network Docs" class="md-header__button md-logo" aria-label="Network Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Network Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              PPPoE
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/abotw/docs-cn" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Network Docs" class="md-nav__button md-logo" aria-label="Network Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Network Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/abotw/docs-cn" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v2h1a1 1 0 0 1 1 1h7v2h-7a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1H2v-2h7a1 1 0 0 1 1-1h1v-2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Docs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bypass-router/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bypass Router
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ddns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DDNS
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--done"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PPPoE
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PPPoE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-pppoe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. What Is PPPoE?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-why-pppoe-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Why PPPoE Exists
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-where-pppoe-is-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Where PPPoE Is Used
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-pppoe-in-a-home-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. PPPoE in a Home Network
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. PPPoE in a Home Network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#typical-home-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typical Home Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-pppoe-vs-dhcp-important-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. PPPoE vs DHCP (Important Comparison)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-how-pppoe-works-step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. How PPPoE Works (Step by Step)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. How PPPoE Works (Step by Step)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-discovery-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Discovery Phase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-session-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Session Phase
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-what-information-you-need-for-pppoe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. What Information You Need for PPPoE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-configuring-pppoe-on-a-router-beginner-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Configuring PPPoE on a Router (Beginner View)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Configuring PPPoE on a Router (Beginner View)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-wan-modes-explained" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common WAN Modes Explained
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-pppoe-and-modems-very-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. PPPoE and Modems (Very Important)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. PPPoE and Modems (Very Important)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bridge-mode-vs-router-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bridge Mode vs Router Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-pppoe-in-openwrt-lede-conceptual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. PPPoE in OpenWrt / LEDE (Conceptual)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-common-problems-causes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Common Problems &amp; Causes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Common Problems &amp; Causes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-pppoe-dial-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 PPPoE Dial Fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-connected-but-no-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Connected but No Internet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-frequent-disconnects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 Frequent Disconnects
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-pppoe-performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. PPPoE Performance Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-pppoe-in-multi-router-setups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. PPPoE in Multi-Router Setups
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. PPPoE in Multi-Router Setups">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#correct-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Correct Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wrong-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wrong Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-when-you-should-care-about-pppoe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. When You Should Care About PPPoE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TLS
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--done"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tun/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TUN Mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wifi
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Wifi
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wifi/wifi-01/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12 21 3.6-4.8c-1-.75-2.25-1.2-3.6-1.2s-2.6.45-3.6 1.2zm0-18C7.95 3 4.21 4.34 1.2 6.6L3 9c2.5-1.88 5.62-3 9-3s6.5 1.12 9 3l1.8-2.4C19.79 4.34 16.05 3 12 3m0 6c-2.7 0-5.19.89-7.2 2.4l1.8 2.4C8.1 12.67 9.97 12 12 12s3.9.67 5.4 1.8l1.8-2.4C17.19 9.89 14.7 9 12 9"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Wi-Fi
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--done"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-pppoe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. What Is PPPoE?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-why-pppoe-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Why PPPoE Exists
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-where-pppoe-is-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Where PPPoE Is Used
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-pppoe-in-a-home-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. PPPoE in a Home Network
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. PPPoE in a Home Network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#typical-home-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typical Home Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-pppoe-vs-dhcp-important-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. PPPoE vs DHCP (Important Comparison)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-how-pppoe-works-step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. How PPPoE Works (Step by Step)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. How PPPoE Works (Step by Step)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-discovery-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Discovery Phase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-session-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Session Phase
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-what-information-you-need-for-pppoe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. What Information You Need for PPPoE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-configuring-pppoe-on-a-router-beginner-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Configuring PPPoE on a Router (Beginner View)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Configuring PPPoE on a Router (Beginner View)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-wan-modes-explained" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common WAN Modes Explained
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-pppoe-and-modems-very-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. PPPoE and Modems (Very Important)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. PPPoE and Modems (Very Important)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bridge-mode-vs-router-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bridge Mode vs Router Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-pppoe-in-openwrt-lede-conceptual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. PPPoE in OpenWrt / LEDE (Conceptual)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-common-problems-causes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Common Problems &amp; Causes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Common Problems &amp; Causes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-pppoe-dial-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 PPPoE Dial Fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-connected-but-no-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Connected but No Internet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-frequent-disconnects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 Frequent Disconnects
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-pppoe-performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. PPPoE Performance Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-pppoe-in-multi-router-setups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. PPPoE in Multi-Router Setups
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. PPPoE in Multi-Router Setups">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#correct-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Correct Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wrong-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wrong Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-when-you-should-care-about-pppoe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. When You Should Care About PPPoE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="pppoe">PPPoE</h1>
+<p><em>(Point-to-Point Protocol over Ethernet)</em></p>
+<h2 id="1-what-is-pppoe">1. What Is PPPoE?</h2>
+<p><strong>PPPoE</strong> stands for:</p>
+<blockquote>
+<p><strong>Point-to-Point Protocol over Ethernet</strong></p>
+</blockquote>
+<p>It is a network protocol used by many ISPs to:</p>
+<ul>
+<li>Authenticate users (username &amp; password)</li>
+<li>Assign IP addresses</li>
+<li>Manage billing and sessions</li>
+</ul>
+<p>In simple terms:</p>
+<blockquote>
+<p><strong>PPPoE lets your ISP know <em>who you are</em> before giving you internet access.</strong></p>
+</blockquote>
+<h2 id="2-why-pppoe-exists">2. Why PPPoE Exists</h2>
+<p>Originally, ISPs used <strong>PPP</strong> over dial-up lines.
+When broadband (DSL / fiber) arrived, ISPs needed:</p>
+<ul>
+<li>User authentication</li>
+<li>Per-user accounting</li>
+<li>Session control</li>
+</ul>
+<p>Ethernet alone <strong>cannot authenticate users</strong>, so PPP was encapsulated inside Ethernet frames.</p>
+<p>That combination is <strong>PPPoE</strong>.</p>
+<h2 id="3-where-pppoe-is-used">3. Where PPPoE Is Used</h2>
+<p>Common scenarios:</p>
+<table>
+<thead>
+<tr>
+<th>Access Type</th>
+<th>Uses PPPoE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ADSL</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>VDSL</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>FTTH (fiber)</td>
+<td>Very common</td>
+</tr>
+<tr>
+<td>Cable modem</td>
+<td>Usually no</td>
+</tr>
+<tr>
+<td>Mobile (4G/5G)</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>If your ISP gives you:</p>
+<ul>
+<li><strong>Username</strong></li>
+<li><strong>Password</strong></li>
+</ul>
+<p>You are almost certainly using <strong>PPPoE</strong>.</p>
+<h2 id="4-pppoe-in-a-home-network">4. PPPoE in a Home Network</h2>
+<h3 id="typical-home-setup">Typical Home Setup</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Internet
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   │
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>ISP (PPPoE Server)
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>   │
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>ONT / Modem (Bridge Mode)
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>   │
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Router (PPPoE Client)
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>   │
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>LAN Devices
+</span></code></pre></div>
+<p>Key point:</p>
+<ul>
+<li><strong>Only one device</strong> performs PPPoE dialing</li>
+<li>Usually your <strong>main router</strong></li>
+</ul>
+<h2 id="5-pppoe-vs-dhcp-important-comparison">5. PPPoE vs DHCP (Important Comparison)</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>PPPoE</th>
+<th>DHCP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authentication</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Username/Password</td>
+<td>Required</td>
+<td>Not needed</td>
+</tr>
+<tr>
+<td>Session control</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Overhead</td>
+<td>Slightly higher</td>
+<td>Lower</td>
+</tr>
+<tr>
+<td>Typical user</td>
+<td>ISP customers</td>
+<td>Local networks</td>
+</tr>
+</tbody>
+</table>
+<p>Think of it like this:</p>
+<ul>
+<li><strong>PPPoE</strong> → logging into the internet</li>
+<li><strong>DHCP</strong> → getting an IP inside a local network</li>
+</ul>
+<h2 id="6-how-pppoe-works-step-by-step">6. How PPPoE Works (Step by Step)</h2>
+<p>PPPoE has <strong>two phases</strong>:</p>
+<hr />
+<h3 id="61-discovery-phase">6.1 Discovery Phase</h3>
+<p>Goal: find the ISP’s PPPoE server</p>
+<p>Steps:</p>
+<ol>
+<li><strong>PADI</strong> – Client broadcasts: “Any PPPoE server here?”</li>
+<li><strong>PADO</strong> – Server replies</li>
+<li><strong>PADR</strong> – Client requests a session</li>
+<li><strong>PADS</strong> – Server confirms session ID</li>
+</ol>
+<p>At this point:</p>
+<ul>
+<li>A <strong>logical point-to-point link</strong> is created</li>
+</ul>
+<hr />
+<h3 id="62-session-phase">6.2 Session Phase</h3>
+<p>Now real PPP begins:</p>
+<ol>
+<li><strong>LCP</strong> – Link parameters negotiation</li>
+<li><strong>Authentication</strong><ul>
+<li>PAP (plain)</li>
+<li>CHAP (challenge-response)</li>
+</ul>
+</li>
+<li><strong>IPCP</strong><ul>
+<li>Assign IP address</li>
+<li>Set DNS, MTU, etc.</li>
+</ul>
+</li>
+</ol>
+<p>Once complete:</p>
+<blockquote>
+<p>Internet access is established</p>
+</blockquote>
+<h2 id="7-what-information-you-need-for-pppoe">7. What Information You Need for PPPoE</h2>
+<p>From your ISP:</p>
+<ul>
+<li>PPPoE username</li>
+<li>PPPoE password</li>
+</ul>
+<p>Optional:</p>
+<ul>
+<li>VLAN ID (common in fiber networks)</li>
+<li>MTU requirement</li>
+</ul>
+<h2 id="8-configuring-pppoe-on-a-router-beginner-view">8. Configuring PPPoE on a Router (Beginner View)</h2>
+<h3 id="required-settings">Required Settings</h3>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WAN protocol</td>
+<td>PPPoE</td>
+</tr>
+<tr>
+<td>Username</td>
+<td>From ISP</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>From ISP</td>
+</tr>
+<tr>
+<td>MTU</td>
+<td>1492 (default)</td>
+</tr>
+</tbody>
+</table>
+<p>Why MTU = 1492?</p>
+<ul>
+<li>Ethernet MTU = 1500</li>
+<li>PPPoE header = 8 bytes</li>
+<li>1500 − 8 = 1492</li>
+</ul>
+<hr />
+<h3 id="common-wan-modes-explained">Common WAN Modes Explained</h3>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>When to use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PPPoE</td>
+<td>ISP gives account</td>
+</tr>
+<tr>
+<td>DHCP</td>
+<td>Cable / shared LAN</td>
+</tr>
+<tr>
+<td>Static IP</td>
+<td>Enterprise / special plan</td>
+</tr>
+<tr>
+<td>Bridge</td>
+<td>Modem only, router dials</td>
+</tr>
+</tbody>
+</table>
+<h2 id="9-pppoe-and-modems-very-important">9. PPPoE and Modems (Very Important)</h2>
+<h3 id="bridge-mode-vs-router-mode">Bridge Mode vs Router Mode</h3>
+<table>
+<thead>
+<tr>
+<th>Modem Mode</th>
+<th>Who does PPPoE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bridge</td>
+<td>Your router</td>
+</tr>
+<tr>
+<td>Router</td>
+<td>Modem itself</td>
+</tr>
+</tbody>
+</table>
+<p>Best practice:</p>
+<blockquote>
+<p><strong>Modem in bridge mode + router dials PPPoE</strong></p>
+</blockquote>
+<p>This avoids:</p>
+<ul>
+<li>Double NAT</li>
+<li>Port forwarding issues</li>
+</ul>
+<h2 id="10-pppoe-in-openwrt-lede-conceptual">10. PPPoE in OpenWrt / LEDE (Conceptual)</h2>
+<p>In OpenWrt:</p>
+<ul>
+<li>PPPoE is a <strong>WAN interface protocol</strong></li>
+<li><code>pppd</code> handles authentication and session</li>
+</ul>
+<p>Key files (advanced):</p>
+<ul>
+<li><code>/etc/config/network</code></li>
+<li><code>/etc/ppp/</code></li>
+</ul>
+<p>Beginners should:</p>
+<ul>
+<li>Use LuCI (web UI)</li>
+<li>Avoid manual config at first</li>
+</ul>
+<hr />
+<h2 id="11-common-problems-causes">11. Common Problems &amp; Causes</h2>
+<h3 id="111-pppoe-dial-fails">11.1 PPPoE Dial Fails</h3>
+<p>Possible reasons:</p>
+<ul>
+<li>Wrong username/password</li>
+<li>ISP limits concurrent sessions</li>
+<li>Wrong VLAN ID</li>
+<li>ONT not in bridge mode</li>
+</ul>
+<hr />
+<h3 id="112-connected-but-no-internet">11.2 Connected but No Internet</h3>
+<p>Causes:</p>
+<ul>
+<li>DNS misconfiguration</li>
+<li>MTU mismatch</li>
+<li>Firewall blocking</li>
+</ul>
+<hr />
+<h3 id="113-frequent-disconnects">11.3 Frequent Disconnects</h3>
+<p>Causes:</p>
+<ul>
+<li>Poor fiber / DSL signal</li>
+<li>ISP timeout policy</li>
+<li>Router CPU overload</li>
+</ul>
+<hr />
+<h2 id="12-pppoe-performance-considerations">12. PPPoE Performance Considerations</h2>
+<ul>
+<li>PPPoE adds <strong>CPU overhead</strong></li>
+<li>On weak routers:<ul>
+<li>High-speed PPPoE may bottleneck</li>
+</ul>
+</li>
+<li>Hardware acceleration may not apply</li>
+</ul>
+<p>Rule of thumb:</p>
+<ul>
+<li>Gigabit PPPoE needs a <strong>strong CPU</strong></li>
+</ul>
+<hr />
+<h2 id="13-pppoe-in-multi-router-setups">13. PPPoE in Multi-Router Setups</h2>
+<h3 id="correct-design">Correct Design</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ONT (Bridge)
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>   │
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Main Router (PPPoE)
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>   │
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Bypass Router / AP
+</span></code></pre></div>
+<h3 id="wrong-design">Wrong Design</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ONT
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a> ├─ Router A (PPPoE)
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a> └─ Router B (PPPoE) ❌
+</span></code></pre></div>
+<p>Most ISPs allow <strong>only one PPPoE session</strong>.</p>
+<hr />
+<h2 id="14-when-you-should-care-about-pppoe">14. When You Should Care About PPPoE</h2>
+<p>You should understand PPPoE if you:</p>
+<ul>
+<li>Flash OpenWrt / LEDE</li>
+<li>Build bypass router setups</li>
+<li>Use bridge mode ONT</li>
+<li>Debug WAN issues</li>
+</ul>
+<h2 id="15-summary">15. Summary</h2>
+<ul>
+<li>PPPoE = PPP + Ethernet</li>
+<li>Used for ISP authentication</li>
+<li>Requires username &amp; password</li>
+<li>Usually handled by the main router</li>
+<li>Still very common in fiber networks</li>
+</ul>
+<blockquote>
+<p>PPPoE is not “old” — it is simply “infrastructure”.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

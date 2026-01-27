@@ -1,0 +1,1621 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="http://abotw.github.io/docs-cn/wifi/wifi-01/">
+      
+      
+        <link rel="prev" href="../../tun/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Wi-Fi - Network Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-what-is-wi-fi" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Network Docs" class="md-header__button md-logo" aria-label="Network Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Network Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Wi-Fi
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/abotw/docs-cn" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Network Docs" class="md-nav__button md-logo" aria-label="Network Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Network Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/abotw/docs-cn" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v2h1a1 1 0 0 1 1 1h7v2h-7a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1H2v-2h7a1 1 0 0 1 1-1h1v-2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Docs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ARP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bypass-router/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bypass Router
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ddns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DDNS
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--done"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pppoe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PPPoE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TLS
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--done"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tun/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TUN Mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wifi
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Wifi
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12 21 3.6-4.8c-1-.75-2.25-1.2-3.6-1.2s-2.6.45-3.6 1.2zm0-18C7.95 3 4.21 4.34 1.2 6.6L3 9c2.5-1.88 5.62-3 9-3s6.5 1.12 9 3l1.8-2.4C19.79 4.34 16.05 3 12 3m0 6c-2.7 0-5.19.89-7.2 2.4l1.8 2.4C8.1 12.67 9.97 12 12 12s3.9.67 5.4 1.8l1.8-2.4C17.19 9.89 14.7 9 12 9"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Wi-Fi
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--done"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12 21 3.6-4.8c-1-.75-2.25-1.2-3.6-1.2s-2.6.45-3.6 1.2zm0-18C7.95 3 4.21 4.34 1.2 6.6L3 9c2.5-1.88 5.62-3 9-3s6.5 1.12 9 3l1.8-2.4C19.79 4.34 16.05 3 12 3m0 6c-2.7 0-5.19.89-7.2 2.4l1.8 2.4C8.1 12.67 9.97 12 12 12s3.9.67 5.4 1.8l1.8-2.4C17.19 9.89 14.7 9 12 9"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Wi-Fi
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--done"></span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-wi-fi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. What Is Wi-Fi?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-wi-fi-vs-internet-very-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Wi-Fi vs Internet (Very Important!)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-basic-wi-fi-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Basic Wi-Fi Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Basic Wi-Fi Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-router-core-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1️⃣ Router (Core Device)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-access-point-ap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2️⃣ Access Point (AP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-client-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3️⃣ Client Devices
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-how-wi-fi-works-high-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. How Wi-Fi Works (High Level)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-what-is-an-ssid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. What Is an SSID?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-wi-fi-frequency-bands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Wi-Fi Frequency Bands
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Wi-Fi Frequency Bands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#24-ghz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 GHz
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-ghz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 GHz
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-ghz-wi-fi-6e-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 GHz (Wi-Fi 6E / 7)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-wi-fi-standards-80211" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Wi-Fi Standards (802.11)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-wi-fi-security-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Wi-Fi Security Basics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Wi-Fi Security Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-security-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Security Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-wi-fi-password-vs-router-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Wi-Fi Password vs Router Password
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-common-wi-fi-problems-and-why-they-happen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Common Wi-Fi Problems (and Why They Happen)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Common Wi-Fi Problems (and Why They Happen)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slow-wi-fi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slow Wi-Fi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weak-signal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weak Signal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frequent-disconnections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frequent Disconnections
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-basic-wi-fi-optimization-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Basic Wi-Fi Optimization Tips
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-wi-fi-vs-ethernet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Wi-Fi vs Ethernet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-real-world-example-home-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Real-World Example (Home Network)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-what-to-learn-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. What to Learn Next
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-wi-fi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. What Is Wi-Fi?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-wi-fi-vs-internet-very-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Wi-Fi vs Internet (Very Important!)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-basic-wi-fi-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Basic Wi-Fi Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Basic Wi-Fi Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-router-core-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1️⃣ Router (Core Device)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-access-point-ap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2️⃣ Access Point (AP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-client-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3️⃣ Client Devices
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-how-wi-fi-works-high-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. How Wi-Fi Works (High Level)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-what-is-an-ssid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. What Is an SSID?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-wi-fi-frequency-bands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Wi-Fi Frequency Bands
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Wi-Fi Frequency Bands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#24-ghz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 GHz
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-ghz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 GHz
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-ghz-wi-fi-6e-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 GHz (Wi-Fi 6E / 7)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-wi-fi-standards-80211" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Wi-Fi Standards (802.11)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-wi-fi-security-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Wi-Fi Security Basics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Wi-Fi Security Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-security-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Security Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-wi-fi-password-vs-router-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Wi-Fi Password vs Router Password
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-common-wi-fi-problems-and-why-they-happen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Common Wi-Fi Problems (and Why They Happen)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Common Wi-Fi Problems (and Why They Happen)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slow-wi-fi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slow Wi-Fi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weak-signal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weak Signal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frequent-disconnections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frequent Disconnections
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-basic-wi-fi-optimization-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Basic Wi-Fi Optimization Tips
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-wi-fi-vs-ethernet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Wi-Fi vs Ethernet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-real-world-example-home-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Real-World Example (Home Network)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-what-to-learn-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. What to Learn Next
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Wi-Fi</h1>
+
+<p>Wi-Fi is everywhere—homes, schools, cafés, offices—but many beginners use it every day without really understanding how it works. This tutorial explains <strong>what Wi-Fi is, how it works, and how to use it properly</strong>, step by step.</p>
+<h2 id="1-what-is-wi-fi">1. What Is Wi-Fi?</h2>
+<p><strong>Wi-Fi</strong> is a technology that allows devices to connect to a local network <strong>wirelessly</strong> using <strong>radio waves</strong>.</p>
+<p>With Wi-Fi, your devices can:</p>
+<ul>
+<li>Access the <strong>Internet</strong></li>
+<li>Communicate with other devices on the same network</li>
+<li>Avoid <strong>physical cables (Ethernet)</strong></li>
+</ul>
+<p>📌 In simple terms:</p>
+<blockquote>
+<p><strong>Wi-Fi = wireless version of Ethernet</strong></p>
+</blockquote>
+<h2 id="2-wi-fi-vs-internet-very-important">2. Wi-Fi vs Internet (Very Important!)</h2>
+<p>Many beginners confuse these two concepts.</p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Wi-Fi</strong></td>
+<td>A wireless connection between your device and a local network</td>
+</tr>
+<tr>
+<td><strong>Internet</strong></td>
+<td>The global network of networks</td>
+</tr>
+</tbody>
+</table>
+<p>💡 You can have:</p>
+<ul>
+<li>Wi-Fi <strong>without</strong> Internet (local network only)</li>
+<li>Internet <strong>without</strong> Wi-Fi (wired connection)</li>
+</ul>
+<p>Example:</p>
+<ul>
+<li>Your laptop connects to a router via Wi-Fi</li>
+<li>The router connects to the Internet via fiber or cable</li>
+</ul>
+<h2 id="3-basic-wi-fi-components">3. Basic Wi-Fi Components</h2>
+<p>A typical Wi-Fi setup includes:</p>
+<h3 id="1-router-core-device">1️⃣ Router (Core Device)</h3>
+<ul>
+<li>Sends and receives Wi-Fi signals</li>
+<li>Connects your local network to the Internet</li>
+<li>Usually called a <strong>Wi-Fi router</strong></li>
+</ul>
+<h3 id="2-access-point-ap">2️⃣ Access Point (AP)</h3>
+<ul>
+<li>A device that provides Wi-Fi coverage</li>
+<li>Home routers usually <strong>include an AP</strong></li>
+<li>In offices, APs may be separate devices</li>
+</ul>
+<h3 id="3-client-devices">3️⃣ Client Devices</h3>
+<ul>
+<li>Phones</li>
+<li>Laptops</li>
+<li>Tablets</li>
+<li>Smart TVs</li>
+<li>IoT devices</li>
+</ul>
+<h2 id="4-how-wi-fi-works-high-level">4. How Wi-Fi Works (High Level)</h2>
+<ol>
+<li>The router <strong>creates a wireless network</strong></li>
+<li>Your device <strong>searches for available Wi-Fi networks</strong></li>
+<li>You select a network (SSID) and enter a password</li>
+<li>Data is transmitted via <strong>radio waves</strong></li>
+<li>The router forwards traffic to the Internet</li>
+</ol>
+<p>📡 Wi-Fi uses <strong>radio frequencies</strong>, not cables.</p>
+<h2 id="5-what-is-an-ssid">5. What Is an SSID?</h2>
+<p><strong>SSID</strong> = Service Set Identifier</p>
+<p>It is simply the <strong>Wi-Fi network name</strong> you see.</p>
+<p>Examples:</p>
+<ul>
+<li><code>Home_WiFi</code></li>
+<li><code>CoffeeShop_Free</code></li>
+<li><code>GL-MT3000</code></li>
+</ul>
+<p>📌 Multiple routers can broadcast different SSIDs in the same area.</p>
+<h2 id="6-wi-fi-frequency-bands">6. Wi-Fi Frequency Bands</h2>
+<p>Wi-Fi works on different frequency bands:</p>
+<h3 id="24-ghz">2.4 GHz</h3>
+<ul>
+<li>Longer range</li>
+<li>Slower speed</li>
+<li>More interference</li>
+</ul>
+<h3 id="5-ghz">5 GHz</h3>
+<ul>
+<li>Shorter range</li>
+<li>Faster speed</li>
+<li>Less interference</li>
+</ul>
+<h3 id="6-ghz-wi-fi-6e-7">6 GHz (Wi-Fi 6E / 7)</h3>
+<ul>
+<li>Very fast</li>
+<li>Very clean spectrum</li>
+<li>Short range</li>
+<li>Requires newer devices</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Band</th>
+<th>Range</th>
+<th>Speed</th>
+<th>Interference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.4 GHz</td>
+<td>Long</td>
+<td>Low</td>
+<td>High</td>
+</tr>
+<tr>
+<td>5 GHz</td>
+<td>Medium</td>
+<td>High</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>6 GHz</td>
+<td>Short</td>
+<td>Very High</td>
+<td>Low</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-wi-fi-standards-80211">7. Wi-Fi Standards (802.11)</h2>
+<p>Wi-Fi versions are defined by <strong>IEEE 802.11 standards</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Marketing Name</th>
+<th>Standard</th>
+<th>Typical Speed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wi-Fi 4</td>
+<td>802.11n</td>
+<td>Up to ~600 Mbps</td>
+</tr>
+<tr>
+<td>Wi-Fi 5</td>
+<td>802.11ac</td>
+<td>Up to ~3.5 Gbps</td>
+</tr>
+<tr>
+<td>Wi-Fi 6</td>
+<td>802.11ax</td>
+<td>Faster + lower latency</td>
+</tr>
+<tr>
+<td>Wi-Fi 6E</td>
+<td>802.11ax (6 GHz)</td>
+<td>Even faster</td>
+</tr>
+<tr>
+<td><strong>Wi-Fi 7</strong></td>
+<td><strong>802.11be</strong></td>
+<td>Ultra-high speed</td>
+</tr>
+</tbody>
+</table>
+<p>📌 Newer Wi-Fi = better speed, efficiency, and stability.</p>
+<h2 id="8-wi-fi-security-basics">8. Wi-Fi Security Basics</h2>
+<h3 id="common-security-types">Common Security Types</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Open (No password)</td>
+<td>❌ Unsafe</td>
+</tr>
+<tr>
+<td>WEP</td>
+<td>❌ Broken</td>
+</tr>
+<tr>
+<td>WPA</td>
+<td>⚠️ Old</td>
+</tr>
+<tr>
+<td>WPA2</td>
+<td>✅ Acceptable</td>
+</tr>
+<tr>
+<td>WPA3</td>
+<td>✅ Recommended</td>
+</tr>
+</tbody>
+</table>
+<p>📌 <strong>Always use WPA2 or WPA3</strong> with a strong password.</p>
+<h2 id="9-wi-fi-password-vs-router-password">9. Wi-Fi Password vs Router Password</h2>
+<p>These are <strong>different</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Password Type</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wi-Fi password</td>
+<td>Connect devices to Wi-Fi</td>
+</tr>
+<tr>
+<td>Router admin password</td>
+<td>Configure the router</td>
+</tr>
+</tbody>
+</table>
+<p>⚠️ Never leave the router admin password as default.</p>
+<h2 id="10-common-wi-fi-problems-and-why-they-happen">10. Common Wi-Fi Problems (and Why They Happen)</h2>
+<h3 id="slow-wi-fi">Slow Wi-Fi</h3>
+<ul>
+<li>Too many devices</li>
+<li>Weak signal</li>
+<li>Interference</li>
+<li>Old router</li>
+</ul>
+<h3 id="weak-signal">Weak Signal</h3>
+<ul>
+<li>Walls and floors block signals</li>
+<li>Router placed too far away</li>
+</ul>
+<h3 id="frequent-disconnections">Frequent Disconnections</h3>
+<ul>
+<li>Overlapping channels</li>
+<li>Power-saving settings</li>
+<li>Poor firmware</li>
+</ul>
+<h2 id="11-basic-wi-fi-optimization-tips">11. Basic Wi-Fi Optimization Tips</h2>
+<p>✔ Place router in a <strong>central location</strong></p>
+<p>✔ Use <strong>5 GHz</strong> when close to the router</p>
+<p>✔ Update router <strong>firmware</strong></p>
+<p>✔ Change default SSID and password</p>
+<p>✔ Avoid placing router near microwaves or metal objects</p>
+<h2 id="12-wi-fi-vs-ethernet">12. Wi-Fi vs Ethernet</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Wi-Fi</th>
+<th>Ethernet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Speed</td>
+<td>Medium–High</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Stability</td>
+<td>Medium</td>
+<td>Very High</td>
+</tr>
+<tr>
+<td>Mobility</td>
+<td>Excellent</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Latency</td>
+<td>Higher</td>
+<td>Lower</td>
+</tr>
+</tbody>
+</table>
+<p>📌 For gaming, servers, and NAS → <strong>Ethernet is better</strong></p>
+<p>📌 For phones and laptops → <strong>Wi-Fi is more convenient</strong></p>
+<h2 id="13-real-world-example-home-network">13. Real-World Example (Home Network)</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[ Internet ]
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>     |
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>[ Modem ]
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>     |
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>[ Wi-Fi Router ]  )))))  Phone
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>                  )))))  Laptop
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>                  )))))  Tablet
+</span></code></pre></div>
+<p>All devices share one Internet connection via Wi-Fi.</p>
+<h2 id="14-what-to-learn-next">14. What to Learn Next</h2>
+<p>If you want to go deeper:</p>
+<ul>
+<li>IP addresses</li>
+<li>DHCP</li>
+<li>NAT</li>
+<li>Channels and interference</li>
+<li><strong>Mesh Wi-Fi systems</strong></li>
+<li>Wi-Fi sniffing and troubleshooting tools</li>
+</ul>
+<h2 id="summary">Summary</h2>
+<ul>
+<li>Wi-Fi is <strong>wireless local networking</strong></li>
+<li>It is <strong>not the Internet itself</strong></li>
+<li>Router + AP + clients form a Wi-Fi network</li>
+<li>Frequency bands and standards affect performance</li>
+<li>Security matters—use <strong>WPA2/WPA3</strong></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

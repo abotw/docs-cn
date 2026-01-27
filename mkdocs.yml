@@ -1,12 +1,16 @@
 site_name: Network Docs
 site_url: http://abotw.github.io/docs-cn
 repo_url: https://github.com/abotw/docs-cn
+
 theme:
   name: material
   features:
     - content.code.copy
     - search.suggest
     - search.highlight
+  palette:
+    primary: blue
+
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
@@ -15,5 +19,6 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+
 plugins:
   - search
